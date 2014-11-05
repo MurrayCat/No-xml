@@ -74,55 +74,6 @@ public class main extends Activity {
 
 
 
-    private class MyAdapter extends ArrayAdapter<String> {
 
-        public MyAdapter(Context context, String[] strings) {
-            super(context, -1, -1, strings);
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-
-            LinearLayout listLayout = new LinearLayout(main.this);
-            listLayout.setLayoutParams(new AbsListView.LayoutParams(
-                    AbsListView.LayoutParams.WRAP_CONTENT,
-                    AbsListView.LayoutParams.WRAP_CONTENT));
-            listLayout.setId(5000);
-
-            TextView listText = new TextView(main.this);
-            listText.setId(5001);
-
-            ImageView imgView = new ImageView(main.this);
-            listText.setId(5002);
-
-            listLayout.addView(listText);
-            listLayout.addView(imgView);
-
-            listText.setText(super.getItem(position));
-            Drawable background;
-            switch (position){
-
-                case 0:
-                     background = getResources().getDrawable(R.drawable.ic_red);
-                    imgView.setBackground(background);
-                    break;
-                case 1:
-                     background = getResources().getDrawable(R.drawable.ic_blue);
-                    imgView.setBackground(background);
-                    break;
-                case 2:
-                     background = getResources().getDrawable(R.drawable.ic_green);
-                    imgView.setBackground(background);
-                    break;
-                case 3:
-                     background = getResources().getDrawable(R.drawable.ic_purple);
-                    imgView.setBackground(background);
-                    break;
-
-            }
-
-            return listLayout;
-        }
-    }
 
 }
